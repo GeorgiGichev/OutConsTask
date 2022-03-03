@@ -1,0 +1,133 @@
+﻿@model OutConsTask.Web.ViewModels.User.AllUsersViewModel
+@using OutConsTask.Common
+@{
+    this.ViewData["Title"] = "Home Page";
+}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Users</h3></div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-row col-md-5">
+                            <div class="col-md-12"><h3 class="text-center font-weight-light my-4">All Users</h3></div>
+                            <div class="container-fluid" id="radioBtnContainer">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sortInlineRadioOptions" id="sortById" value="byId">
+                                    <label class="form-check-label" for="inlineRadio1">Sort by ID</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sortInlineRadioOptions" id="sortByName" value="byName">
+                                    <label class="form-check-label" for="inlineRadio2">Sort by Name</label>
+                                </div>
+                            </div>
+                            <table class="table-bordered table-striped table-hover col-md-12" id="dataTable" width="50px" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>First Name</th>
+                                        <th>Surname</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="col-md-12" id="usersTable">
+                                    @foreach (var user in Model.UsersForListing)
+                                    {
+                                        <tr>
+                                            <td calss="userId">@user.Id</td>
+                                            <td>@user.Name</td>
+                                            <td>@user.Surname</td>
+                                            <td>@user.Email</td>
+                                            <td><input class="btn btn-primary btn-block hoursBtn" type="button" userid="@user.Id" hoursBtn value="View Project Hours"></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>First Name</th>
+                                        <th>Surname</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="form-row col-md-5">
+                            <div class="container-fluid" id="radioBtnContainer">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="usersRadio" value="user">
+                                    <label class="form-check-label" for="inlineRadio1">Users</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="projectsRadio" value="project">
+                                    <label class="form-check-label" for="inlineRadio2">Projects</label>
+                                </div>
+                            </div>
+                            <div id="chart_div"></div>
+                        </div>
+                        <div class="form-row col-md-12">
+                            <div class="form-row col-md-5 justify-content-center">
+                                <nav aria-label="...">
+                                    <ul class="pagination">
+                                        <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> }" id="prevContainer">
+                                            <a class="page-link" id="PrevBtn">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" id="FBtn">@Model.PreviousPageNumber</a></li>
+                                        <li class="page-item active" aria-current="page">
+                                            <a class="page-link" id="SBtn">@Model.PageNumber</a>
+                                        </li>
+                                        @if (Model.PageNumber < Model.PageCount)
+                                        {
+                                            <li class="page-item"><a class="page-link" id="TBtn">@Model.NextPageNumber</a></li>
+                                        }
+                                        <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text> }" id="nextContainer">
+                                            <a class="page-link" id="NextBtn">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="form-row col-md-2">
+                            </div>
+                            <div class="form-row col-md-5">
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center container-fluid">
+
+                            <div class="form-group col-md-5">
+                                <label>Start date</label>
+                                <input type="date" name="dateField" class="form-control" id="startDate" />
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>End date</label>
+                                <input type="date" name="dateField" class="form-control" id="endDate" />
+                            </div>
+
+                        </div>
+
+                        <div class="form-row justify-content-center container-fluid">
+                            <div class="col-md-4">
+                                <input type="button" class="btn btn-primary btn-block" id="filterButton" value="Filter">
+                                <input type="button" class="btn btn-danger btn-block" id="clearButton" value="Clear Filter">
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
