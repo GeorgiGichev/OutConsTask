@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\OutConsTask.Common\OutConsTask.Common.csproj" />
     <ProjectReference Include="..\..\Data\OutConsTask.Data.Models\OutConsTask.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\OutConsTask.Data\OutConsTask.Data.csproj" />
     <ProjectReference Include="..\..\Services\OutConsTask.Services.Data\OutConsTask.Services.Data.csproj" />

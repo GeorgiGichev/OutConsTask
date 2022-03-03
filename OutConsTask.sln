@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutConsTask.Data", "Data\Ou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutConsTask.Data.Common", "Data\OutConsTask.Data.Common\OutConsTask.Data.Common.csproj", "{D0D59508-CF8B-4656-A344-396C530BB9DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutConsTask.Common", "OutConsTask.Common\OutConsTask.Common.csproj", "{A2288C46-0FBF-43B6-80B6-3072FD65BC32}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutConsTask.Services.Data", "Services\OutConsTask.Services.Data\OutConsTask.Services.Data.csproj", "{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutConsTask.Services.Mapping", "Services\OutConsTask.Services.Mapping\OutConsTask.Services.Mapping.csproj", "{415FD7FA-0453-4FE1-9A29-C6E1D8B45C3D}"
@@ -47,10 +45,6 @@ Global
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
